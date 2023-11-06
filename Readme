@@ -1,0 +1,21 @@
+app_project
+
+Introduction
+
+This is a simplistic project built using python. It uses a unit test to test for cases.
+
+
+## Getting Started
+
+Provide instructions on how to get your project up and running. Include information on prerequisites and installation steps.
+
+### Installation
+
+Step-by-step instructions on how to install and set up your project.
+To navigate to project directory
+cd app-project
+
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/ogunsijianu/appproject.git
