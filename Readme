@@ -5,15 +5,24 @@ Introduction
 This is a simplistic project built using python. It uses a unit test to test for cases.
 
 
-## Getting Started
+Getting Started
 
-Provide instructions on how to get your project up and running. Include information on prerequisites and installation steps.
+Instructions on how to get the project running.
 
-### Installation
+Installation
 
 Step-by-step instructions on how to install and set up your project.
 To navigate to project directory
 cd app-project
+
+Build Automation Instructions:
+
+1. Open a terminal in the project directory.
+2. To compile and test the application, run:
+python app.py
+
+3. To run unit tests, execute:
+python test_app.py
 
 
 1. Clone the repository:
