@@ -12,8 +12,20 @@ Provide instructions on how to get your project up and running. Include informat
 ### Installation
 
 Step-by-step instructions on how to install and set up your project.
+
+Build Automation Instructions:
+
+1. Open a terminal in the project directory.
+2. To compile and test the application, run:
+python app.py
+
+3. To run unit tests, execute:
+python test_app.py
+
 To navigate to project directory
 cd app-project
+
+
 
 
 1. Clone the repository:
