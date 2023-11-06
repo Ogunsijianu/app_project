@@ -19,4 +19,5 @@ cd app-project
 1. Clone the repository:
    ```sh
    https://github.com/Ogunsijianu/app_project.git
-2. 
+2. Github CLI
+gh repo clone Ogunsijianu/app_project
