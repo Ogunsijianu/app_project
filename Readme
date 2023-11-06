@@ -22,7 +22,7 @@ Build Automation Instructions:
 python app.py
 
 3. To run unit tests, execute:
-python test_app.py
+python unit_test_app.py
 
 
 1. Clone the repository:
