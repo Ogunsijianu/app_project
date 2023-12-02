@@ -1,0 +1,27 @@
+def convert_to_numeric(value):
+    try:
+        return int(value)
+    except ValueError:
+        try:
+            return float(value)
+        except ValueError:
+            return None
+
+def add2(arg1, arg2):
+    arg1_numeric = convert_to_numeric(arg1)
+    arg2_numeric = convert_to_numeric(arg2)
+
+    if arg1_numeric is not None and arg2_numeric is not None:
+        # If both arguments are numeric, perform addition
+        return arg1_numeric + arg2_numeric
+    else:
+        # If either or both arguments cannot be converted to numeric, concatenate them as strings
+        return str(arg1) + str(arg2)
+
+if __name__ == "__main__":
+    # Example usage:
+    value1 = input("Enter the first value: ")
+    value2 = input("Enter the second value: ")
+    
+    result = add2(value1, value2)
+    print(f"The result is: {result}")
