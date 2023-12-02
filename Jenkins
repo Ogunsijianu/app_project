@@ -1,0 +1,52 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    // Use a Python 3 image to build the application
+                    docker.image('python:3.9').inside {
+                        sh 'pip install -r requirements.txt'
+                        sh 'python -m compileall app.py calc.py'
+                    }
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                script {
+                    // Use a Python 3 image with pytest for testing
+                    docker.image('python:3.9').inside {
+                        sh 'pip install -r requirements.txt'
+                        sh 'pytest --verbose --junit-xml test-reports/results.xml test.py'
+                    }
+                }
+            }
+            post {
+                always {
+                    junit 'test-reports/results.xml'
+                }
+            }
+        }
+
+        stage('Deliver') {
+            steps {
+                script {
+                    // Use a Python 3 image with PyInstaller to create a standalone executable
+                    docker.image('python:3.9').inside {
+                        sh 'pip install -r requirements.txt'
+                        sh 'pyinstaller --onefile app.py'
+                    }
+                }
+            }
+            post {
+                success {
+                    // Archive the generated executable
+                    archiveArtifacts 'dist/app.py'
+                }
+            }
+        }
+    }
+}
